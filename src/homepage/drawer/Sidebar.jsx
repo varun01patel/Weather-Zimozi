@@ -36,26 +36,28 @@ const Sidebar = () => {
 
   return (
     <div>
-      <AppBar position="static" sx={{ backgroundColor: '#0000FF' }}>
+      <AppBar position="static" sx={{ backgroundColor: 'white' }}>
         <Toolbar>
           <IconButton
             edge="start"
-            color="inherit"
+            color="#FFFFFF"
             aria-label="menu"
             onClick={handleToggleDrawer}
             position={'sticky'}
           >
-            <MenuIcon />
+            <MenuIcon color="white" />
           </IconButton>
           <div style={{ flexGrow: 1 }}></div>
           {localStorage.getItem('token') ?
             <Box onClick={() => {localStorage.removeItem('token'), navigate('/')  }}>
-              <IconButton color="inherit">
-                <ExitToAppIcon />
+              <IconButton color="default">
+                {"Logout"}
+                <LoginIcon />
               </IconButton>
             </Box> :
             <Box onClick={() => navigate('/login')}>
-              <IconButton color="inherit">
+              <IconButton color="default">
+                {"Login"}
                 <LoginIcon />
               </IconButton>
             </Box>}
